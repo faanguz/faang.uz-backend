@@ -1,0 +1,14 @@
+{
+    "name": "FAANG-BACKEND",
+    "namespace": "faang.uz",
+    "script": "build/index.js",
+    "interpreter": "node@22.1.0",
+    "log_date_format": "YYYY-MM-DD HH:MM Z",
+    "log_file": "/server/.logs/faang-backend.log",
+    "out_file": "/server/.logs/faang-backend-out.log",
+    "error_file": "/server/.logs/faang-backend-error.log",
+    "autorestart": true,
+    "env": {
+        "NODE_ENV": "production"
+    }
+}

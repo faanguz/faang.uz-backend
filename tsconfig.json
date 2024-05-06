@@ -1,0 +1,32 @@
+{
+    "extends": "@tsconfig/strictest/tsconfig.json",
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "resolveJsonModule": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "rootDir": ".",
+        "sourceRoot": "./src",
+        "declaration": true,
+        "preserveConstEnums": true,
+        "exactOptionalPropertyTypes": false,
+        "lib": ["ESNext"],
+        "types": ["node", "reflect-metadata", "jest"],
+        "outDir": "./build",
+        "baseUrl": ".",
+        "paths": {
+            "app/*": ["./src/app/*"],
+            "components/*": ["./src/components/*"],
+            "data/*": ["./src/data/*"],
+            "di/*": ["./src/dependency-injection/*"],
+            "domain/*": ["./src/domain/*"],
+            "controllers/*": ["./src/components/controllers/*"]
+        }
+    },
+    "include": ["src/**/*.ts", "test/**/*.ts"],
+    "exclude": ["node_modules", "coverage", "build", "dist"]
+}
