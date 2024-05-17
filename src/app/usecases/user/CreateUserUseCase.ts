@@ -1,5 +1,3 @@
-import { ConflictException } from '@nestjs/common';
-import { HttpMessages } from 'components/constants/http.messages';
 import type { UseCase } from 'components/interfaces';
 import type { User, UserService } from 'domain/user';
 
@@ -22,7 +20,7 @@ export class CreateUserUseCaseImpl implements CreateUserUseCase {
         const user = await this.userService.getUserByPhoneNumber(params.phone_number);
 
         if (user) {
-            throw new ConflictException(HttpMessages.Users.errors.phoneAlreadyExist);
+            throw new Error('User already exists');
         }
 
         return this.userService.createUser({
