@@ -10,7 +10,7 @@ export class UserController {
         @Inject(Symbols.usecases.user.createUser)
         private readonly createUserUseCase: CreateUserUseCase,
         @Inject(Symbols.presenters.user.createUser)
-        private readonly createUserPresenter: CreateUserPresenter,
+        private readonly createUserPresenter: CreateUserPresenter
     ) {}
 
     @Post('create')
