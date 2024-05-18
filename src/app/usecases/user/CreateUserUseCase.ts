@@ -1,5 +1,6 @@
 import type { UseCase } from 'components/interfaces';
 import type { User, UserService } from 'domain/user';
+import { UserErrors } from 'domain/user';
 
 type Params = {
     first_name: string;
@@ -20,7 +21,9 @@ export class CreateUserUseCaseImpl implements CreateUserUseCase {
         const user = await this.userService.getUserByPhoneNumber(params.phone_number);
 
         if (user) {
-            throw new Error('User already exists');
+            throw new UserErrors.AlreadyExists({
+                phone_number: params.phone_number,
+            });
         }
 
         return this.userService.createUser({
