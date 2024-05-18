@@ -8,6 +8,7 @@ export enum Environment {
 
 export interface Config {
     environment: Environment;
+    defaultLanguage: string;
     axios: {
         timeout: number;
         maxRedirects: number;
