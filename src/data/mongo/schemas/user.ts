@@ -23,5 +23,6 @@ export const UserSchema = new Schema<UserModel>(
     },
     {
         _id: true,
+        collection: 'users',
     }
 );
