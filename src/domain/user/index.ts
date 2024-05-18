@@ -1,4 +1,5 @@
-export * from './user';
+export * from 'domain/user/user';
 
-export * from './service';
-export * from './repository';
+export * from 'domain/user/service';
+export * from 'domain/user/repository';
+export * from 'domain/user/errors';
