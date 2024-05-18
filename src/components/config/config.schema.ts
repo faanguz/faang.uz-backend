@@ -9,6 +9,12 @@ export const configSchema: Schema<Config> = {
         format: String,
         default: Environment.Test,
     },
+    defaultLanguage: {
+        env: 'DEFAULT_LANGUAGE',
+        doc: 'Default language',
+        format: String,
+        default: 'en',
+    },
     axios: {
         timeout: {
             env: 'AXIOS_TIMEOUT',
