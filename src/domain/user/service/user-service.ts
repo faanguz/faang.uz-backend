@@ -12,7 +12,7 @@ export class UserServiceImpl implements UserService {
     constructor(private readonly userRepository: UserRepository) {}
 
     public async createUser(params: CreateUserParams): Promise<User | null> {
-        const createdUserData = new User({
+        const user = new User({
             first_name: params.first_name,
             last_name: params.last_name,
             phone_number: params.phone_number,
@@ -21,7 +21,7 @@ export class UserServiceImpl implements UserService {
             updated_at: new Date(),
         });
 
-        return this.userRepository.createUser(createdUserData);
+        return this.userRepository.createUser(user);
     }
 
     public async getUserByPhoneNumber(phoneNumber: string): Promise<User | null> {

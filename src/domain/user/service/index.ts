@@ -1,3 +1,3 @@
-export * from './user-service';
+export * from 'domain/user/service/user-service';
 
-export * from './types';
+export * from 'domain/user/service/types';
